@@ -1,30 +1,35 @@
 Udacity-ML-nanodegrees,totally 6 project....于3月末毕业，拿到纳米学位
 # Udacity Machine Learning Nanodegree Projects
-This is a collection of projects required to complete Udacity ML nanodegree. This collection is already outdated though: folks at Udacity are doing a good job by constantly adding more material to their Nanodegrees.
+这是完成Udacity ML nanodegree所需的项目集合。有6个项目，简单的项目1到涉及更多的项目3和项目4。每个项目（P1除外）都不不同侧重的ML特定领域：监督，无监督和强化学习还有深度。 回头看，我发现所有的项目（特别是P1和P2）都比较容易，
 
-There are four projects ranging from a _very_ simple Project 1 to a considerably more involved Project 3 and Project 4. Each project (except P1) focuses on a specific domain of ML: supervised, unsupervised and reinforcement learning. Looking backwards, I find all the projects (especially P1 and P2) quite easy, but there should be something to start from!
+* [**Project 1: Predicting Boston Housing Prices**]
 
-* [**Project 1: Predicting Boston Housing Prices**](https://github.com/dnkirill/udacity-ml-nanodegree/blob/master/p1_boston_houses_prices_project/boston_houses_prices.ipynb). A very simple project to get acquainted to working with basic machine learning techniques using numpy and scipy. It relies on the famous Boston houses prices dataset which can be accessed directly from sklearn. Regression problem, supervised learning.
+一个非常简单的项目，熟悉使用numpy和scipy的基本机器学习技术。 它依赖于着名的波士顿房价数据集，可以直接从sklearn访问。 回归问题，监督学习。
 
-* [**Project 2: Building a Student Intervention System**](https://github.com/dnkirill/udacity-ml-nanodegree/blob/master/p2_supervised_learning/student_intervention.ipynb). A supervised learning project. The goal of this project is to identify students who might need an early intervention based on their exams' scores. 
+A very simple project to get acquainted to working with basic machine learning techniques using numpy and scipy. It relies on the famous Boston houses prices dataset which can be accessed directly from sklearn. Regression problem, supervised learning.
 
-  We compare the the performance of three models: SVM, Logistic Regression and Naive Bayes based on their F1 score, minimum required training set and training time, choose the best of them, tune it a little bit with Grid Search and, finally, calculate its ROC AUC score.
+* [**Project 2: Building a Student Intervention System**]
 
-* [**Project 3: Creating Customer Segments**](https://github.com/dnkirill/udacity-ml-nanodegree/blob/master/p3_unsupervised_learning/customer_segments.ipynb). An unsupervised learning project. We analyze a [Wholesale customers dataset](https://archive.ics.uci.edu/ml/datasets/Wholesale+customers) from UCI. The goal is to identify customer segments in data and to propose a personalized product delivery schedule for each customer segment. This project is more complicated than the previous two. Highlights:
+监督学习项目。 该项目的目标是确定可能需要根据考试成绩进行早期干预的学生。
+A supervised learning project. The goal of this project is to identify students who might need an early intervention based on their exams' scores. 监督学习项目。 该项目的目标是确定可能需要根据考试成绩进行早期干预的学生。
 
-  * After visualizing distributions of each feature, we log-transform them to make their distributions closer to normal. We detect and remove outliers using Tukey's method  based on IQR.
-  * We apply PCA transformation and try to analyze and visualize the resulted components. 
-  * Finally, we pick K-Means over GMM for clustering, choose the best cluster number based on silhouette score and analyze what customer segments these clusters may represent. 
-  * In the end, we discuss how to run A/B tests with the information we've just got to make sure that the modifications in delivery schedules don't negatively affect large groups of our customers. We also discuss how to measure the significance of A/B tests in the real world.
 
-* [**Project 4. Training a Smartcab to Drive**](https://github.com/dnkirill/udacity-ml-nanodegree/blob/master/p4_reinforcement_learning/project4_report.ipynb). In this project we train a smart agent to drive a simple virtual town. We need to consider other cars on the road, traffic lights and basic turning rules and to make our smart agent reach the destination in time. The project requires `pygame` GUI programming module with not-that-obvious setup process. I suggest installing it with `anaconda` enviroment (though I don't use it on a regular basis). Highlights:
+* [**Project 3: Creating Customer Segments**]
 
-  * We use Markov Decision Process (MDP) and, specifically, Q-Learning, to describe possible actions for each state the smart agent finds itself in. We stick to a simple Q-Table-based algorithm without DQN or policy gradients and research different behaviors of our smart agents.
+一个无监督的学习项目。目标是确定数据中的客户细分，并为每个客户群提出个性化的产品发货计划。 这个项目比前两个更复杂。 强调：
 
-  * We try to optimize the learning by shrinking down the Q-Table size and tuning hyperparameters.
+* 在可视化每个特征的分布后，我们对它们进行变换，使其分布更接近正常。 我们使用基于IQR的Tukey方法检测和去除异常值
+* 我们应用PCA转换，并尝试分析和可视化所得到的组件
+* 最后，我们通过GMM选择K-Means进行聚类，根据轮廓分数选择最佳的群集编号，并分析这些群集可能代表的客户群
+* 最后，我们讨论如何运行
 
-  * Finally, we compare two algorithm for action selection: GLIE (greedy learning + infinite exploration) and softmax action selection. 
+An unsupervised learning project. We analyze a [Wholesale customers dataset](https://archive.ics.uci.edu/ml/datasets/Wholesale+customers) from UCI. The goal is to identify customer segments in data and to propose a personalized product delivery schedule for each customer segment. This project is more complicated than the previous two. 
 
-  Personally, this has been the most challenging and informative project of all of these four. Most of the work is made in python files and the jupyter notebook just reports the results.
+* [**Project 4. Training a Smartcab to Drive**]
+在这个项目中，我们训练一个智能代理，开个简单的虚拟城镇。我们需要考虑道路上的其他车辆，交通信号灯和基本转弯规则，并使我们的智能座席及时到达目的地。该项目需要“pygame”GUI编程模块，并没有那么明显的设置过程。我建议用“anaconda”环境安装（尽管我不定期使用它）。
 
-  N.B. I decided not to add logs from this project (large files) so running the code in the notebook will lead to blank plots — keep this in mind.
+ * 我们使用马尔可夫决策过程（MDP），特别是Q-Learning来描述智能代理发现自己的每个状态的可能动作。我们坚持使用简单的基于Q-Table的算法，无需DQN或策略渐进和研究我们智能代理的不同行为。
+ * 我们尝试通过缩小Q-Table大小和调整超参数来优化学习。
+ * 最后，我们比较两种动作选择算法：GLIE（贪心学习无限探索）和softmax动作选择。 
+ 
+In this project we train a smart agent to drive a simple virtual town. We need to consider other cars on the road, traffic lights and basic turning rules and to make our smart agent reach the destination in time. The project requires `pygame` GUI programming module with not-that-obvious setup process. I suggest installing it with `anaconda` enviroment (though I don't use it on a regular basis).
