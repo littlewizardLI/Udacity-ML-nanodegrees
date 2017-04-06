@@ -1,35 +1,47 @@
-# Forecast Rossmann Store Sales 
-(from Kaggle Competition)
+
+# Capstone Project—— Predicting sales of Rossman stores
+
+![Rossman](http://aktualnerabaty.pl/wp-content/themes/PressGrid/images/marki/logo-rossmann.jpg)
+
+### 数据集在此处下载即可 https://www.kaggle.com/c/rossmann-store-sales/data
+### 数据的内容大致为
+
+* Id - 表示测试集中（存储，日期）副本的Id
+* Store - 每个商店的独特Id
+* Sales  - 任何一天的营业额（这是你预测的）
+* Customers - 某一天的客户数量
+* Open - 商店是否打开的指示器：0 =关闭，1 =打开
+* StateHoliday - 表示一个国家假期。通常所有商店，除了少数例外，在国营假期关闭。请注意，所有学校在公众假期和周末关闭。 a =公众假期，b =复活节假期，c =圣诞节，0 =无
+* SchoolHoliday - 表示（商店，日期）是否受到公立学校关闭的影响
+* StoreType - 区分4种不同的商店模式：a，b，c，d
+* Assortment - 描述分类级别：a = basic，b = extra，c = extended
+* CompetitionDistance - 距离最接近的竞争对手商店的距离
+* CompetitionOpenSince[Month/Year] ] - 给出最近的竞争对手开放时间的大约年和月
+* Promo - 指示商店是否在当天运行促销
+* Promo2 - Promo2是一些持续和连续推广的一些商店：0 =商店不参与，1 =商店正在参与
+* Promo2自[年/周] - 描述商店开始参与Promo2的年份和日历周
+* PromoInterval - 描述了Promo2的连续间隔开始，命名新的促销活动的月份。例如。 “二月，五月，八月，十一月”是指每一轮在该店的任何一年的二月，五月，八月，十一月份开始
 
 
-### 题目描述
-
-![](./rossmann_banner2.png)
-
-Rossmann是欧洲的一家连锁药店。 在这个源自Kaggle比赛[Rossmann Store Sales](https://www.kaggle.com/c/rossmann-store-sales)中，我们需要根据Rossmann药妆店的信息（比如促销，竞争对手，节假日）以及在过去的销售情况，来预测Rossmann未来的销售额。
-
-### 数据下载 
-此数据集可以从Kaggle上[下载](https://www.kaggle.com/c/rossmann-store-sales/data)。
+## 文件说明
+代码主要包含4个开发用的ipython notebook
+* exploration[1]和processing[1]是我初次的2份代码，一个是可视化的，一个是做处理的，不过第一次我做处理的时候用的是较为简单的3个单模型，最后结果比较一般
 
 
-### 建议
-
-对于数据的使用，可以有很多做法，比如说，可以模拟参加比赛，用train.csv来建模，之后用test.csv来预测，通过提交到Kaggle来评估模型表现。
-
-另一种做法，可以只是使用train.csv, 进行本地的分割，预留一部分作为test data, 其余用来建模。这样就不需要提交去Kaggle， 也可以自己重新定义指标来衡量模型的表现。
-
-另外，也可以只是借助数据，来自己设计问题（比如原题目中对销售额的预测是一个regression问题，这里也可以转化成对Rossmann药妆店进行分类）。
-
-无论使用什么方法及获得什么样的结果，值得注意的是，这个项目中会遇到很多数据科学常见的问题，比如缺失数据该如何处理，有时间序列的数据该如何分割，如何利用时间信息，如何使用store.csv提供的额外信息，等等。这些问题可能需要更进一步的思考，这些思考的过程，最好写进最后的报告中。
-
-当然，如果想要简化问题，可以忽略一些相关的信息/特征。项目的基本要求，可以参见Udacity的[项目要求](https://review.udacity.com/#!/rubrics/273/view)。
+* exploration with xgb[2]和xgb[3]是我后来实验的2个版本，其中xgb效果显著，取得了不错的成绩。
 
 
-### 提交
-* PDF 报告文件（注意这不应该是notebook的导出，请按照[模板](https://github.com/nd009/machine-learning/blob/zh-cn/projects/capstone/capstone_report_template.md)填写）
-* 项目相关代码
-* 包含使用的库，机器硬件，机器操作系统，训练时间等数据的 README 文档
+## 用到的一些库
+numpy，pandas ， matplotlib，pylab，datetime，math，time，randomos都很常见
 
 
-### 参考
-比赛第一名的[采访](http://blog.kaggle.com/2015/12/21/rossmann-store-sales-winners-interview-1st-place-gert/)及[参考资料](https://www.kaggle.com/c/rossmann-store-sales/forums/t/18024/model-documentation-1st-place)。
+## 最终版用到的一些库以及其他说明
+
+这个脚本用到了 [XGBoost](https://github.com/dmlc/xgboost), [Pandas](https://github.com/pydata/pandas) 和一点 [Scikit-learn](https://github.com/scikit-learn/scikit-learn).
+
+
+听大神说如果添加Google趋势每日搜索“Rossmann”，每个州的州数据和天气数据，您只需一个模型即可获得第七名。 但是，由于该模型对于现实世界的使用将是无用的，因此该数据不在此模式之内。
+
+该脚本使用大约8Gb的RAM，需要4-6个小时时间才能运行。反正我是跑了一下午。tips：32位运行会出错
+
+
