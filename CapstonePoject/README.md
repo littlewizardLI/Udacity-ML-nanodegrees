@@ -25,10 +25,10 @@
 
 ## 文件说明
 代码主要包含4个开发用的ipython notebook
-* exploration[1]和processing[1]是我初次的2份代码，一个是可视化的，一个是做处理的，不过第一次我做处理的时候用的是较为简单的3个单模型，最后结果比较一般
+* exploration_and_visualisation[1]和processing[1]是我初次的2份代码，一个是可视化的，一个是做处理的，不过第一次我做处理的时候用的是较为简单的3个单模型，最后结果比较一般， 用得的评价指标使RMSE而不是RMSPE
 
+* exploration with xgb[2]和xgb[3]是我后来实验的2个版本，其中xgb效果显著，取得了不错的效果。
 
-* exploration with xgb[2]和xgb[3]是我后来实验的2个版本，其中xgb效果显著，取得了不错的成绩。
 
 
 ## 用到的一些库
